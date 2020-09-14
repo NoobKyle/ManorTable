@@ -1,0 +1,7 @@
+{
+  "name": "KCT",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
