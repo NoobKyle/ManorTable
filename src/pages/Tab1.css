@@ -1,0 +1,43 @@
+.main{
+    width: 100vw;
+    height: 40vh;
+    max-height: 40vh;
+
+    margin: 0%;
+    padding: 5%;
+
+    background-color: 22222;
+}
+
+.greeting{
+    font-size: 1.3rem;
+}
+
+.subject{
+    font-size: 3.3rem;
+    font-weight: 600;
+}
+
+.period{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.day{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.upnext{
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.ad{
+    height: 10vh;
+    width: 100vw;
+
+    max-height: 10vh;
+
+    margin-bottom: 1.2rem;
+}

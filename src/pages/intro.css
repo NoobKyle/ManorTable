@@ -1,0 +1,26 @@
+.introLogo{
+    text-align: center;
+    align-items: center;
+
+	background-image: url("../assets/logo.png");
+	height: 40vh;
+	width: 60vw;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+    position: absolute;
+    left: 50%;
+    right: 50%;
+	top: 15vh;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    
+    
+}
+
+.moreapps{
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,9 @@
+.ad{
+  background-image: url("../../assets/logo.png");
+	height: 10vh;
+	width: 100vw;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
