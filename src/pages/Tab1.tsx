@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonList, IonLabel, IonItem, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCardContent, IonCard } from '@ionic/react';
+import { IonList, IonLabel, IonItem, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 import './Tab1.css';
 import Ad from '../components/Ad/Ad';
@@ -9,7 +9,7 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Home</IonTitle>
+          <IonTitle>Manor Table</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -48,6 +48,9 @@ const Tab1: React.FC = () => {
           </IonItem>
           <IonItem>
             <IonLabel>BREAK</IonLabel>
+          </IonItem>
+          <IonItem>
+            <IonLabel>Pro Feature Required</IonLabel>
           </IonItem>
         </IonList>
 

@@ -1,12 +1,11 @@
 .main{
     width: 100vw;
-    height: 40vh;
+    height: 30vh;
     max-height: 40vh;
 
     margin: 0%;
-    padding: 5%;
+    padding: 1rem;
 
-    background-color: 22222;
 }
 
 .greeting{

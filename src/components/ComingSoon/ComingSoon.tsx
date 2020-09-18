@@ -1,4 +1,4 @@
-import { IonText, IonTitle } from '@ionic/react';
+import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonText, IonTitle } from '@ionic/react';
 import React from 'react';
 import './ComingSoon.css';
 
@@ -6,14 +6,17 @@ import './ComingSoon.css';
 const ComingSoon: React.FC = () => {
   return (
     <div className='comingsoon'>
-      <IonTitle>Coming Soon</IonTitle>
+      <IonCard>
+        <IonCardHeader>
+          <IonCardTitle>Coming Soon</IonCardTitle>          
+        </IonCardHeader>
 
-      <br/>
-      
-      <IonText>
-        <p>Hey! Wonder what class your friends have next?</p>
-        <p>Add them here.</p>
-      </IonText>
+        <IonCardContent>
+          <p>Hey! Wonder what class your friends have next?</p>
+          <p>Add them here.</p>
+          <a href='https://www.indiehackers.com/' className='bloglink'>Site Update Blog</a>
+        </IonCardContent>
+      </IonCard>
     </div>
   );
 };

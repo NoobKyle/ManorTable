@@ -1,9 +1,10 @@
 .ad{
-  background-image: url("../../assets/logo.png");
-	height: 10vh;
+  background-image: url("https://source.unsplash.com/random");
+	height: 13vh;
 	width: 100vw;
 
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+
 }
