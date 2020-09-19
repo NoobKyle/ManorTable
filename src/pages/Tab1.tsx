@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IonList, IonLabel, IonItem, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 import './Tab1.css';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../store/modules/rootReducer'
+
 import Ad from '../components/Ad/Ad';
 
 const Tab1: React.FC = () => {
+
+  const name = useSelector( (state:RootState) => state.user.list.name);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    
+  });
+
+
   return (
     <IonPage>
       <IonHeader>

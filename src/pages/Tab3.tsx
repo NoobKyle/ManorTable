@@ -3,11 +3,14 @@ import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem,  IonLabel
   IonCardHeader, IonCardSubtitle, IonCardTitle, IonAvatar, IonList,  IonCard, IonModal, IonButton } from '@ionic/react';
 import './Tab3.css';
 
+import Share from '../components/AboutComps/Share/ShareCard';
+import Premium from '../components/AboutComps/Premium/Premium';
+
 const Tab3: React.FC = () => {
 
   var [ showShareCard, setShowShareCard ] = useState(false);
   var [ showHelpCard, setShowHelpCard ] = useState(false);
-  var [ showYoutubePromo, setShowYoutubePromo ] = useState(false)
+  var [ showPremium, setShowPremium ] = useState(false)
 
   
   return (
@@ -31,7 +34,7 @@ const Tab3: React.FC = () => {
           
           <IonCardHeader>
             <IonCardTitle>Kyle</IonCardTitle>
-            <IonCardSubtitle>Hello</IonCardSubtitle>
+            <IonCardSubtitle>Free Member</IonCardSubtitle>
           </IonCardHeader>
         </IonItem>
 
@@ -39,14 +42,14 @@ const Tab3: React.FC = () => {
         <br />
 
         <IonList>
-          <IonItem button onClick={() => { }} detail>
+          <IonItem button onClick={() => { setShowPremium(true) }} detail>
             <IonLabel>
-              YouTube Channel Promo
+              Premium Membership
             </IonLabel>
           </IonItem>
-          <IonModal isOpen={showYoutubePromo} cssClass='my-custom-class'>
-            <p> hello </p>
-            <IonButton expand="block" fill="clear" onClick={() => setShowYoutubePromo(false)}> Close </IonButton> 
+          <IonModal isOpen={showPremium} cssClass='my-custom-class'>
+            <Premium />
+            <IonButton expand="block" fill="clear" onClick={() => setShowPremium(false)}> Close </IonButton> 
           </IonModal>
 
 
@@ -56,7 +59,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonModal isOpen={showShareCard} cssClass='my-custom-class'>
-            <p>hello </p>
+            <Share />
             <IonButton expand="block" fill="clear" onClick={() => setShowShareCard(false)}> Close </IonButton> 
           </IonModal>
         </IonList>
