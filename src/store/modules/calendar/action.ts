@@ -1,7 +1,7 @@
-export function addIntrest(inputString:String){
+export function periodUpdate(input:number){
     return {
-        type: "intrests/ADD",
-        payload: inputString
+        type: "period/UPDATE",
+        payload: input
     };
 }
 

@@ -7,14 +7,54 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/modules/rootReducer'
 
 import Ad from '../components/Ad/Ad';
+import { periodUpdate } from '../store/modules/calendar/action';
 
 const Tab1: React.FC = () => {
 
-  const name = useSelector( (state:RootState) => state.user.list.name);
+  const subject = useSelector( (state:RootState) => state.calendar.current.subject);
+  const period = useSelector( (state:RootState) => state.calendar.current.period);
+  const day = useSelector( (state:RootState) => state.calendar.current.day);
+  const upnext = useSelector( (state:RootState) => state.calendar.current.upnext);
+
   const dispatch = useDispatch();
 
+
+  function currentPeriod(){
+    let today = new Date();  
+    let currentTime = today.getHours();
+
+    switch( currentTime ){
+      case 8:
+          console.log('8')
+          break
+      case 9:
+          console.log('9')
+          break
+      case 10:
+          console.log('10')
+          break
+      case 11:
+          console.log('11')
+          break
+      case 12:
+          console.log('12')
+          break
+      case 13:
+          console.log('13')
+          break
+      case 14:
+          console.log('14')
+          break
+      default:
+    }
+  }
+
+
+
   useEffect(() => {
-    
+
+    // dispatch( periodUpdate( currentPeriod() )); 
+    currentPeriod();
   });
 
 
@@ -34,12 +74,12 @@ const Tab1: React.FC = () => {
 
         <div className='main'>
               <IonCardSubtitle className='greeting'>Hey! Kyle</IonCardSubtitle>
-              <IonCardTitle className='subject'>Mathematics</IonCardTitle>
-              <IonCardSubtitle className='period'>Period: 4</IonCardSubtitle>
-              <IonCardSubtitle className='day'>Day: 5</IonCardSubtitle>
+              <IonCardTitle className='subject'> { subject } </IonCardTitle>
+              <IonCardSubtitle className='period'>Period: { period }</IonCardSubtitle>
+              <IonCardSubtitle className='day'>Day: { day }</IonCardSubtitle>
 
               <br/>
-              <IonCardSubtitle className='upnext'>Up next: Life Science</IonCardSubtitle>
+              <IonCardSubtitle className='upnext'>Up next: { upnext }</IonCardSubtitle>
         </div>
 
         <div className='ad'>
