@@ -24,27 +24,24 @@ const Tab1: React.FC = () => {
     let currentTime = today.getHours();
 
     switch( currentTime ){
-      case 8:
-          console.log('8')
-          break
+      case 7:
+          return 1
       case 9:
-          console.log('9')
-          break
+           return 2       
       case 10:
-          console.log('10')
-          break
+          return 3     
       case 11:
-          console.log('11')
-          break
+          return 4        
       case 12:
-          console.log('12')
-          break
+          return 5       
       case 13:
-          console.log('13')
-          break
+          return 6       
       case 14:
-          console.log('14')
-          break
+          return 7         
+      case 15:
+          return 8          
+      case 16:
+          return 9   
       default:
     }
   }
@@ -53,8 +50,8 @@ const Tab1: React.FC = () => {
 
   useEffect(() => {
 
-    // dispatch( periodUpdate( currentPeriod() )); 
-    currentPeriod();
+    dispatch( periodUpdate( currentPeriod() )); 
+
   });
 
 

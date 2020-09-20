@@ -27,13 +27,6 @@ const initial_state = {
        photoUrl: 'No User Photo',
        emailVerified: 'No User Email',
        uid: 'No User UID'
-   },
-   test: {
-       name: 'No User',
-       email: 'No User Email',
-       photoUrl: 'No User Photo',
-       emailVerified: 'No User Email',
-       uid: 'No User UID'
    }
 }
 

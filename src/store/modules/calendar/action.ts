@@ -1,4 +1,4 @@
-export function periodUpdate(input:number){
+export function periodUpdate(input:any){
     return {
         type: "period/UPDATE",
         payload: input

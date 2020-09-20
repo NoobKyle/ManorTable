@@ -1,4 +1,5 @@
 import Produce from 'immer';
+import { DRAFTABLE } from 'immer/dist/internal';
 
 const initial_state = {
    list: { day: 1,
@@ -12,36 +13,70 @@ const initial_state = {
          p8: 'IT',
          p9: 'Physics',
         },
-   times: {
-       p1: 8,
-       p2: 9,
-       p3: 10,
-       p4: 11,
-       p5: 12,
-       p6: 13,
-       p7: 14,
-       p8: 15,
-       p9: 16,
-   },
    current: {
-       subject: 'Mathematics',
-       period: '1',
+       subject: '',
+       period: 1,
        day: 6,
-       upnext: 'Business Studies'
+       upnext: ''
    }
 }
+
+
 
 export default function intrests(state = initial_state, action:any){
     return Produce(state, draft => {
         switch( action.type ){
-            case 'intrests/ADD':
-                console.log('Hello World')
+            case 'period/UPDATE':
+
+                switch( action.payload ){
+                    case 1:
+                        draft.current.subject = draft.list.p1
+                        draft.current.period = action.payload
+                        draft.current.upnext = draft.list.p2
+                        break
+                    case 2:
+                        draft.current.subject = draft.list.p2
+                        draft.current.period = action.payload
+                        draft.current.upnext = draft.list.p3
+                        break
+                    case 3:
+                        draft.current.subject = draft.list.p3
+                        draft.current.period = action.payload
+                        draft.current.upnext = draft.list.p4
+                        break
+                    case 4:
+                        draft.current.subject = draft.list.p4
+                        draft.current.period = action.payload
+                        draft.current.upnext = draft.list.p5
+                        break
+                    case 5:
+                        draft.current.subject = draft.list.p5
+                        draft.current.period = action.payload
+                        draft.current.upnext = draft.list.p6
+                        break
+                    case 6:
+                        draft.current.subject = draft.list.p6
+                        draft.current.period = action.payload
+                        draft.current.upnext = draft.list.p7
+                        break
+                    case 7:
+                        draft.current.subject = draft.list.p7
+                        draft.current.period = action.payload
+                        draft.current.upnext = draft.list.p8
+                        break
+                    case 8:
+                        draft.current.subject = draft.list.p8
+                        draft.current.period = action.payload
+                        draft.current.upnext = draft.list.p7
+                        break
+                    case 9:
+                        draft.current.subject = draft.list.p9
+                        draft.current.period = action.payload
+                        draft.current.upnext = 'After School'
+                        break
+                    default:
+                }
                 break
-            case 'intrests/REMOVE':
-                console.log('Hello World')
-                break
-            case 'calendar/UPDATE':
-                console.log('Hello World')
             default:
         }
     })
