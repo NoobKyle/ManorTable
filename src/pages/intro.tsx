@@ -5,7 +5,7 @@ import './intro.css';
 const Tab3: React.FC = () => {
   return (
     <IonPage>
-      <IonContent fullscreen>
+      <IonContent>
 
        <div className='introLogo' >
           <p>

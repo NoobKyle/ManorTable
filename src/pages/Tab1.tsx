@@ -48,11 +48,8 @@ const Tab1: React.FC = () => {
   }
 
 
-
   useEffect(() => {
-
-    dispatch( periodUpdate( currentPeriod() ));
-
+    dispatch( periodUpdate(currentPeriod()));
   });
 
 
@@ -69,6 +66,7 @@ const Tab1: React.FC = () => {
             <IonTitle size="large">Home</IonTitle>
           </IonToolbar>
         </IonHeader>
+
 
         <div className='main'>
               <IonCardSubtitle className='greeting'>Hey! Kyle</IonCardSubtitle>

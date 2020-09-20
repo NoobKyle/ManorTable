@@ -12,7 +12,7 @@ const Tab3: React.FC = () => {
   var [ showHelpCard, setShowHelpCard ] = useState(false);
   var [ showPremium, setShowPremium ] = useState(false)
 
-  
+
   return (
     <IonPage>
       <IonHeader>
@@ -31,7 +31,7 @@ const Tab3: React.FC = () => {
           <IonAvatar>
             <img src='https://source.unsplash.com/random' alt=""/>
           </IonAvatar>
-          
+
           <IonCardHeader>
             <IonCardTitle>Kyle</IonCardTitle>
             <IonCardSubtitle>Free Member</IonCardSubtitle>
@@ -42,6 +42,17 @@ const Tab3: React.FC = () => {
         <br />
 
         <IonList>
+          <IonItem button onClick={() => {}} >
+            <IonLabel>
+              Refresh
+            </IonLabel>
+          </IonItem>
+        </IonList>
+
+          <br/>
+          <br/>
+
+        <IonList>
           <IonItem button onClick={() => { setShowPremium(true) }} detail>
             <IonLabel>
               Premium Membership
@@ -49,7 +60,7 @@ const Tab3: React.FC = () => {
           </IonItem>
           <IonModal isOpen={showPremium} cssClass='my-custom-class'>
             <Premium />
-            <IonButton expand="block" fill="clear" onClick={() => setShowPremium(false)}> Close </IonButton> 
+            <IonButton expand="block" fill="clear" onClick={() => setShowPremium(false)}> Close </IonButton>
           </IonModal>
 
 
@@ -60,7 +71,7 @@ const Tab3: React.FC = () => {
           </IonItem>
           <IonModal isOpen={showShareCard} cssClass='my-custom-class'>
             <Share />
-            <IonButton expand="block" fill="clear" onClick={() => setShowShareCard(false)}> Close </IonButton> 
+            <IonButton expand="block" fill="clear" onClick={() => setShowShareCard(false)}> Close </IonButton>
           </IonModal>
         </IonList>
 
@@ -75,7 +86,7 @@ const Tab3: React.FC = () => {
           </IonItem>
           <IonModal isOpen={showHelpCard} cssClass='my-custom-class'>
             <p>hello </p>
-            <IonButton expand="block" fill="clear" onClick={() => setShowHelpCard(false)}> Close </IonButton> 
+            <IonButton expand="block" fill="clear" onClick={() => setShowHelpCard(false)}> Close </IonButton>
           </IonModal>
 
 
@@ -100,13 +111,13 @@ const Tab3: React.FC = () => {
 
         <br />
 
-        <IonCard>    
+        <IonCard>
           <IonCardHeader>
-              <IonCardSubtitle>Knights Class Table</IonCardSubtitle>
+              <IonCardSubtitle>Manor Table</IonCardSubtitle>
               <IonCardSubtitle>Copyright &#169; 2020, All Rights Reserved</IonCardSubtitle>
           </IonCardHeader>
         </IonCard>
-        
+
       </IonContent>
     </IonPage>
   );
