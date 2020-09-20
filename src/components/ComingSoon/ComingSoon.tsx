@@ -1,4 +1,4 @@
-import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonText, IonTitle } from '@ionic/react';
+import { IonCard, IonCardContent, IonCardHeader, IonCardTitle} from '@ionic/react';
 import React from 'react';
 import './ComingSoon.css';
 
@@ -8,7 +8,7 @@ const ComingSoon: React.FC = () => {
     <div className='comingsoon'>
       <IonCard>
         <IonCardHeader>
-          <IonCardTitle>Coming Soon</IonCardTitle>          
+          <IonCardTitle>Coming Soon</IonCardTitle>
         </IonCardHeader>
 
         <IonCardContent>

@@ -1,5 +1,4 @@
 import Produce from 'immer';
-import { DRAFTABLE } from 'immer/dist/internal';
 
 const initial_state = {
    list: { day: 1,
@@ -75,9 +74,12 @@ export default function intrests(state = initial_state, action:any){
                         draft.current.upnext = 'After School'
                         break
                     default:
+                        draft.current.subject = 'Refresh In Settings!'
+                        draft.current.period = -1
+                        draft.current.upnext = 'click refresh button in settings'
                 }
                 break
             default:
         }
     })
-} 
+}
