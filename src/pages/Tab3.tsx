@@ -42,7 +42,7 @@ const Tab3: React.FC = () => {
         <br />
 
         <IonList>
-          <IonItem button onClick={() => {}} >
+          <IonItem button onClick={() => { window.location.reload(false)}} >
             <IonLabel>
               Refresh
             </IonLabel>
