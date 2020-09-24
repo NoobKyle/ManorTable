@@ -17,7 +17,8 @@ const initial_state = {
        period: 1,
        day: 6,
        upnext: ''
-   }
+   },
+   calender: {}
 }
 
 
@@ -25,7 +26,7 @@ const initial_state = {
 export default function intrests(state = initial_state, action:any){
     return Produce(state, draft => {
         switch( action.type ){
-            case 'period/UPDATE':
+            case 'PERIOD_UPDATE':
 
                 switch( action.payload ){
                     case 1:
@@ -78,6 +79,11 @@ export default function intrests(state = initial_state, action:any){
                         draft.current.period = -1
                         draft.current.upnext = 'click refresh button in settings'
                 }
+                break
+
+            case 'GET_CALENDAR': 
+                console.log(action.users)
+                draft.calender = action.users[0]
                 break
             default:
         }

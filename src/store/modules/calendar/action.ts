@@ -1,14 +1,10 @@
+import { Dispatch } from 'redux'
+import axios from 'axios'
+
 export function periodUpdate(input:any){
     return {
-        type: "period/UPDATE",
+        type: "PERIOD_UPDATE",
         payload: input
-    };
-}
-
-export function removeIntrest(inputPosition: Number){
-    return {
-        type: "intrests/REMOVE",
-        payload: inputPosition
     };
 }
 
@@ -17,3 +13,18 @@ export function calendarUpdate(){
         type: 'calendar/UPDATE'
     }
 }
+
+export const GetCalendar = () => {
+    return ( dispatch:Dispatch ) => {
+
+        axios.get(`https://us-central1-manortable.cloudfunctions.net/app/kyle`)
+        .then(res => {
+            const person = res.data;
+
+            dispatch({
+                type: "GET_CALENDAR",
+                users: person
+            });
+        })
+    };
+};

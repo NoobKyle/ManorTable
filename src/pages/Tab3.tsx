@@ -6,12 +6,16 @@ import './Tab3.css';
 import Share from '../components/AboutComps/Share/ShareCard';
 import Premium from '../components/AboutComps/Premium/Premium';
 
+import { useDispatch } from 'react-redux';
+import { GetCalendar } from '../store/modules/calendar/action'
+
 const Tab3: React.FC = () => {
 
   var [ showShareCard, setShowShareCard ] = useState(false);
   var [ showHelpCard, setShowHelpCard ] = useState(false);
   var [ showPremium, setShowPremium ] = useState(false)
 
+  const dispatch = useDispatch();
 
   return (
     <IonPage>
@@ -102,9 +106,14 @@ const Tab3: React.FC = () => {
         <br />
 
         <IonList>
-          <IonItem button onClick={() => {}} href='/'>
+          <IonItem button onClick={() => {  }} href='/'>
             <IonLabel>
               Sign Out
+            </IonLabel>
+          </IonItem>
+          <IonItem button onClick={() => { dispatch(GetCalendar()) }}>
+            <IonLabel>
+              test thunk
             </IonLabel>
           </IonItem>
         </IonList>

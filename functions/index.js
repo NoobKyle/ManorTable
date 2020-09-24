@@ -69,7 +69,7 @@ app.get('/:id', (req, res)=> {
 
 
 // Add user
-app.post('/api/add', (req, res) => {
+app.post('/add', (req, res) => {
     var data = req.body;
     var docName = data.Name;
 
@@ -82,7 +82,7 @@ app.post('/api/add', (req, res) => {
 })
 
 // Update user
-app.post('/api/update/:id', (req, res) => {
+app.post('/update/:id', (req, res) => {
     var update = req.params.id;
     var data = req.body;
 
@@ -96,7 +96,7 @@ app.post('/api/update/:id', (req, res) => {
 
 
 // Delete user
-app.delete('/api/delete/:id', (req, res) => {
+app.delete('/delete/:id', (req, res) => {
     var del = req.params.id;
 
     db.doc(del).delete()
