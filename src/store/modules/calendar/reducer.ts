@@ -18,7 +18,7 @@ const initial_state = {
        day: 6,
        upnext: ''
    },
-   users: [{ name: 'no users'}]
+   calender: {}
 }
 
 
@@ -81,9 +81,9 @@ export default function intrests(state = initial_state, action:any){
                 }
                 break
 
-            case 'GET_USERS':
+            case 'GET_CALENDAR': 
                 console.log(action.users)
-                draft.users.push(action.users)
+                draft.calender = action.users[0]
                 break
             default:
         }

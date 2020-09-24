@@ -14,19 +14,16 @@ export function calendarUpdate(){
     }
 }
 
-export const GetUsers = () => {
-    console.log("GetUsers");
-
+export const GetCalendar = () => {
     return ( dispatch:Dispatch ) => {
-        console.log("GetUsers dispatch");
 
-        axios.get(`https://us-central1-manortable.cloudfunctions.net/app/users`)
+        axios.get(`https://us-central1-manortable.cloudfunctions.net/app/kyle`)
         .then(res => {
-            const persons = res.data;
+            const person = res.data;
 
             dispatch({
-                type: "GET_USERS",
-                users: persons
+                type: "GET_CALENDAR",
+                users: person
             });
         })
     };
