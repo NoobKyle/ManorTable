@@ -7,7 +7,8 @@ import Share from '../components/AboutComps/Share/ShareCard';
 import Premium from '../components/AboutComps/Premium/Premium';
 
 import { useDispatch } from 'react-redux';
-import { GetCalendar } from '../store/modules/calendar/action'
+import { GetCalendar } from '../store/modules/calendar/action';
+import { Auth } from '../store/modules/user/action';
 
 const Tab3: React.FC = () => {
 
@@ -106,7 +107,7 @@ const Tab3: React.FC = () => {
         <br />
 
         <IonList>
-          <IonItem button onClick={() => {  }} href='/'>
+          <IonItem button onClick={() => { dispatch( Auth('noUser', 1, false))  }} href='/'>
             <IonLabel>
               Sign Out
             </IonLabel>
@@ -114,6 +115,11 @@ const Tab3: React.FC = () => {
           <IonItem button onClick={() => { dispatch(GetCalendar()) }}>
             <IonLabel>
               test thunk
+            </IonLabel>
+          </IonItem>
+          <IonItem button onClick={() => { dispatch(Auth('tinaishe', 4, true)) }}>
+            <IonLabel>
+              test auth
             </IonLabel>
           </IonItem>
         </IonList>

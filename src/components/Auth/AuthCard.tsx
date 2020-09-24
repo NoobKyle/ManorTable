@@ -18,7 +18,7 @@ const ComingSoon: React.FC = () => {
 
           <IonItem>
             <IonLabel position="floating">Floating Label</IonLabel>
-            <IonInput value={text}></IonInput>
+          
           </IonItem>
 
           <br/>
