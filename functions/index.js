@@ -65,7 +65,7 @@ app.get('/:id', (req, res)=> {
         .catch(err => {
             res.sendStatus(500);
         })
-      })
+})
 
 
 // Add user

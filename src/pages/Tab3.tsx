@@ -6,14 +6,18 @@ import './Tab3.css';
 import Share from '../components/AboutComps/Share/ShareCard';
 import Premium from '../components/AboutComps/Premium/Premium';
 
-import { useDispatch } from 'react-redux';
-import { GetCalendar } from '../store/modules/calendar/action'
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../store/modules/rootReducer'
+import { GetCalendar } from '../store/modules/calendar/action';
+import { Auth } from '../store/modules/user/action';
 
 const Tab3: React.FC = () => {
 
   var [ showShareCard, setShowShareCard ] = useState(false);
   var [ showHelpCard, setShowHelpCard ] = useState(false);
   var [ showPremium, setShowPremium ] = useState(false)
+
+  const user = useSelector( (state:RootState) => state.user.list.username);
 
   const dispatch = useDispatch();
 
@@ -37,7 +41,7 @@ const Tab3: React.FC = () => {
           </IonAvatar>
 
           <IonCardHeader>
-            <IonCardTitle>Kyle</IonCardTitle>
+            <IonCardTitle>{user}</IonCardTitle>
             <IonCardSubtitle>Free Member</IonCardSubtitle>
           </IonCardHeader>
         </IonItem>
@@ -106,14 +110,9 @@ const Tab3: React.FC = () => {
         <br />
 
         <IonList>
-          <IonItem button onClick={() => {  }} href='/'>
+          <IonItem button onClick={() => { dispatch( Auth('noUser', 1, false))  }} href='/'>
             <IonLabel>
               Sign Out
-            </IonLabel>
-          </IonItem>
-          <IonItem button onClick={() => { dispatch(GetCalendar()) }}>
-            <IonLabel>
-              test thunk
             </IonLabel>
           </IonItem>
         </IonList>

@@ -6,7 +6,7 @@ const initial_state = {
          p2: 'Business Studies',
          p3: 'Business Studies',
          p4: 'Mathematics',
-         p5: 'Engish',
+         p5: 'English',
          p6: 'Afikaans',
          p7: 'English',
          p8: 'IT',
@@ -18,7 +18,19 @@ const initial_state = {
        day: 6,
        upnext: ''
    },
-   calender: {}
+   calendar:{
+     d3:  { day: 1,
+           p1: 'Refresh',
+           p2: 'Refresh',
+           p3: 'Refresh',
+           p4: 'Refresh',
+           p5: 'Refresh',
+           p6: 'Refresh',
+           p7: 'Refresh',
+           p8: 'Refresh',
+           p9: 'Refresh',
+          }
+   }
 }
 
 
@@ -27,7 +39,6 @@ export default function intrests(state = initial_state, action:any){
     return Produce(state, draft => {
         switch( action.type ){
             case 'PERIOD_UPDATE':
-
                 switch( action.payload ){
                     case 1:
                         draft.current.subject = draft.list.p1
@@ -75,16 +86,18 @@ export default function intrests(state = initial_state, action:any){
                         draft.current.upnext = 'After School'
                         break
                     default:
-                        draft.current.subject = 'Refresh In Settings!'
-                        draft.current.period = -1
+                        draft.current.subject = '---'
+                        draft.current.period = 0
                         draft.current.upnext = 'click refresh button in settings'
                 }
                 break
 
-            case 'GET_CALENDAR': 
-                console.log(action.users)
-                draft.calender = action.users[0]
+            case 'GET_CALENDAR':
+                draft.calendar = action.data[0]
+                draft.current.day = action.day
                 break
+
+          
             default:
         }
     })

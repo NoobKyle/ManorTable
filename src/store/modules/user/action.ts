@@ -1,5 +1,6 @@
-export function updateUserInfo(){
+export function Auth( name:any, day: any, authed: boolean){
     return {
-        type: "user/UPDATE"
+        type: "AUTH",
+        payload: { username:name, day:day, authed:authed }
     };
 }
