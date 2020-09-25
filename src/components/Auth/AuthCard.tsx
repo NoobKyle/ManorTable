@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonItem, IonLabel, IonInput, IonButton, IonItemDivider} from '@ionic/react';
+import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonItem, IonInput, IonButton } from '@ionic/react';
 import './AuthCard.css';
 
 import { Auth } from '../../store/modules/user/action';
+import { GetCalendar } from '../../store/modules/calendar/action';
 import { useDispatch } from 'react-redux';
 
 const ComingSoon: React.FC = () => {
@@ -34,7 +35,7 @@ const ComingSoon: React.FC = () => {
           <br/>
           <br/>
 
-          <IonButton onClick={() => { dispatch(Auth( username, day, true)); }} >Login</IonButton>
+          <IonButton onClick={() => { dispatch(Auth( username, day, true)); dispatch(GetCalendar(username, day)) }} >Login</IonButton>
           <br/>
           <br/>
           <br/>
