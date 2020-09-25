@@ -1,7 +1,5 @@
 import Produce from 'immer';
 
-var authed: any;
-
 const initial_state = {
    list: {
        username: 'noUser',

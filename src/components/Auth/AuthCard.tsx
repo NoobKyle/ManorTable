@@ -1,9 +1,17 @@
-import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonItem, IonLabel, IonInput} from '@ionic/react';
-import React from 'react';
+import React, { useState } from 'react';
+import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonItem, IonLabel, IonInput, IonButton, IonItemDivider} from '@ionic/react';
 import './AuthCard.css';
 
+import { Auth } from '../../store/modules/user/action';
+import { useDispatch } from 'react-redux';
 
 const ComingSoon: React.FC = () => {
+
+  const dispatch = useDispatch();
+
+   const [username, setUsername] = useState<string>();
+   const [day, setDay] = useState<number>();
+
   return (
     <div className='comingsoon'>
       <IonCard>
@@ -12,15 +20,21 @@ const ComingSoon: React.FC = () => {
         </IonCardHeader>
 
         <IonCardContent>
-          <p>Hey! Wonder what class your friends have next?</p>
-          <p>Add them here.</p>
+          <p>Hey There!</p>
+          <p>Please enter a valid registered username and current school day to continue.</p>
           <br/>
 
           <IonItem>
-            <IonLabel position="floating">Floating Label</IonLabel>
-          
+            <IonInput value={username} placeholder="Username" onIonChange={e => setUsername(e.detail.value!)}></IonInput>
           </IonItem>
+          <br/>
+          <IonItem>
+           <IonInput type="number" value={day} placeholder="Day" onIonChange={e => setDay(parseInt(e.detail.value!, 10))}></IonInput>
+          </IonItem>
+          <br/>
+          <br/>
 
+          <IonButton onClick={() => { dispatch(Auth( username, day, true)); }} >Login</IonButton>
           <br/>
           <br/>
           <br/>

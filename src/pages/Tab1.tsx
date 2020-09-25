@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
-import { IonList, IonLabel, IonItem, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React, { useEffect, useState } from 'react';
+import { IonList, IonLabel, IonModal, IonItem, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 import './Tab1.css';
+import AuthCard from '../components/Auth/AuthCard';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/modules/rootReducer'
@@ -9,7 +10,12 @@ import { RootState } from '../store/modules/rootReducer'
 import Ad from '../components/Ad/Ad';
 import { periodUpdate } from '../store/modules/calendar/action';
 
+
 const Tab1: React.FC = () => {
+
+  const [showModal, setShowModal] = useState(false );
+
+  const authState = useSelector( (state:RootState) => state.user.list.authed);
 
   const subject = useSelector( (state:RootState) => state.calendar.current.subject);
   const period = useSelector( (state:RootState) => state.calendar.current.period);
@@ -49,6 +55,12 @@ const Tab1: React.FC = () => {
 
 
   useEffect(() => {
+    if( authState === false){
+      setShowModal(true);
+    }else{
+      setShowModal(false);
+    }
+    
     dispatch( periodUpdate(currentPeriod()));
   });
 
@@ -102,6 +114,11 @@ const Tab1: React.FC = () => {
             <IonLabel>Pro Feature Required</IonLabel>
           </IonItem>
         </IonList>
+
+        <IonModal isOpen={showModal} cssClass='my-custom-class'>
+          <AuthCard/>
+
+        </IonModal>
 
       </IonContent>
     </IonPage>
