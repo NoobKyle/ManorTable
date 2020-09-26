@@ -44,29 +44,55 @@ app.get('/users', (req, res) => {
       })
 
 
-// Get :id user
+// // Get :id user
+// app.get('/:id', (req, res)=> {
+//     var wanted = req.params.id;
+//     var moc = [];
+//
+//     db.get()
+//         .then((snapshot) => {
+//             snapshot.forEach((doc) => {
+//                 if(doc.id == wanted){
+//                     moc.push({
+//                         "docId": doc.id,
+//                         "userData": doc.data()
+//                     })
+//                 }
+//             })
+//             res.send(moc);
+//             res.sendStatus(200);
+//         })
+//         .catch(err => {
+//             res.sendStatus(500);
+//         })
+// })
+
+
+// Get :id user and :day
 app.get('/:id', (req, res)=> {
     var wanted = req.params.id;
+    var wantedDay = req.query.day;
     var moc = [];
 
-    db.get()
-        .then((snapshot) => {
-            snapshot.forEach((doc) => {
-                if(doc.id == wanted){
-                    moc.push({
-                        "docId": doc.id,
-                        "userData": doc.data()
-                    })
-                }
-            })
-            res.send(moc);
-            res.sendStatus(200);
-        })
-        .catch(err => {
-            res.sendStatus(500);
-        })
-})
+      db.get()
+          .then((snapshot) => {
+              snapshot.forEach((doc) => {
+                  if(doc.id == wanted){
+                     let data = doc.data();
 
+                      moc.push({
+                          "docId": doc.id,
+                          "userData": data[wantedDay]
+                      })
+                  }
+              })
+              res.send(moc);
+              res.sendStatus(200);
+          })
+          .catch(err => {
+              res.sendStatus(500);
+          })
+})
 
 // Add user
 app.post('/add', (req, res) => {

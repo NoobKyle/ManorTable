@@ -8,7 +8,6 @@ import Premium from '../components/AboutComps/Premium/Premium';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/modules/rootReducer'
-import { GetCalendar } from '../store/modules/calendar/action';
 import { Auth } from '../store/modules/user/action';
 
 const Tab3: React.FC = () => {

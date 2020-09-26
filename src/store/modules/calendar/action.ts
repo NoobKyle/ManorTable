@@ -19,7 +19,7 @@ export function dayUpdate( input:number ){
 export const GetCalendar = ( username:any, day:any ) => {
     return ( dispatch:Dispatch ) => {
 
-        axios.get(`https://us-central1-manortable.cloudfunctions.net/app/${username}`)
+        axios.get(`https://us-central1-manortable.cloudfunctions.net/app/${username}?day=d${day}`)
         .then(res => {
             const data = res.data;
 

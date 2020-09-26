@@ -1,17 +1,6 @@
 import Produce from 'immer';
 
 const initial_state = {
-   list: { day: 1,
-         p1: 'ASSEMBLY',
-         p2: 'Business Studies',
-         p3: 'Business Studies',
-         p4: 'Mathematics',
-         p5: 'English',
-         p6: 'Afikaans',
-         p7: 'English',
-         p8: 'IT',
-         p9: 'Physics',
-        },
    current: {
        subject: '',
        period: 1,
@@ -19,17 +8,7 @@ const initial_state = {
        upnext: ''
    },
    calendar:{
-     d3:  { day: 1,
-           p1: 'Refresh',
-           p2: 'Refresh',
-           p3: 'Refresh',
-           p4: 'Refresh',
-           p5: 'Refresh',
-           p6: 'Refresh',
-           p7: 'Refresh',
-           p8: 'Refresh',
-           p9: 'Refresh',
-          }
+    userData: ['refresh']
    }
 }
 
@@ -41,47 +20,47 @@ export default function intrests(state = initial_state, action:any){
             case 'PERIOD_UPDATE':
                 switch( action.payload ){
                     case 1:
-                        draft.current.subject = draft.list.p1
+                        draft.current.subject = draft.calendar.userData[0]
                         draft.current.period = action.payload
-                        draft.current.upnext = draft.list.p2
+                        draft.current.upnext = draft.calendar.userData[1]
                         break
                     case 2:
-                        draft.current.subject = draft.list.p2
+                        draft.current.subject = draft.calendar.userData[1]
                         draft.current.period = action.payload
-                        draft.current.upnext = draft.list.p3
+                        draft.current.upnext = draft.calendar.userData[2]
                         break
                     case 3:
-                        draft.current.subject = draft.list.p3
+                        draft.current.subject = draft.calendar.userData[2]
                         draft.current.period = action.payload
-                        draft.current.upnext = draft.list.p4
+                        draft.current.upnext = draft.calendar.userData[3]
                         break
                     case 4:
-                        draft.current.subject = draft.list.p4
+                        draft.current.subject = draft.calendar.userData[3]
                         draft.current.period = action.payload
-                        draft.current.upnext = draft.list.p5
+                        draft.current.upnext = draft.calendar.userData[4]
                         break
                     case 5:
-                        draft.current.subject = draft.list.p5
+                        draft.current.subject = draft.calendar.userData[4]
                         draft.current.period = action.payload
-                        draft.current.upnext = draft.list.p6
+                        draft.current.upnext = draft.calendar.userData[5]
                         break
                     case 6:
-                        draft.current.subject = draft.list.p6
+                        draft.current.subject = draft.calendar.userData[5]
                         draft.current.period = action.payload
-                        draft.current.upnext = draft.list.p7
+                        draft.current.upnext = draft.calendar.userData[6]
                         break
                     case 7:
-                        draft.current.subject = draft.list.p7
+                        draft.current.subject = draft.calendar.userData[6]
                         draft.current.period = action.payload
-                        draft.current.upnext = draft.list.p8
+                        draft.current.upnext = draft.calendar.userData[7]
                         break
                     case 8:
-                        draft.current.subject = draft.list.p8
+                        draft.current.subject = draft.calendar.userData[7]
                         draft.current.period = action.payload
-                        draft.current.upnext = draft.list.p7
+                        draft.current.upnext = draft.calendar.userData[8]
                         break
                     case 9:
-                        draft.current.subject = draft.list.p9
+                        draft.current.subject = draft.calendar.userData[8]
                         draft.current.period = action.payload
                         draft.current.upnext = 'After School'
                         break
@@ -97,7 +76,7 @@ export default function intrests(state = initial_state, action:any){
                 draft.current.day = action.day
                 break
 
-          
+
             default:
         }
     })

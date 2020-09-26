@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonList, IonLabel, IonModal, IonItem, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonList, IonLabel, IonModal, IonItem, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCardContent } from '@ionic/react';
 
 import './Tab1.css';
 import AuthCard from '../components/Auth/AuthCard';
@@ -30,7 +30,7 @@ const Tab1: React.FC = () => {
     let currentTime = today.getHours();
 
     switch( currentTime ){
-      case 8:
+      case 22:
           return 1
       case 9:
           return 2
@@ -60,7 +60,7 @@ const Tab1: React.FC = () => {
     }else{
       setShowModal(false);
     }
-    
+
     dispatch( periodUpdate(currentPeriod()));
   });
 
@@ -79,7 +79,7 @@ const Tab1: React.FC = () => {
           </IonToolbar>
         </IonHeader>
 
-
+        <IonCardContent className='mainContent'>
         <div className='main'>
               <IonCardSubtitle className='greeting'>Hey! Kyle</IonCardSubtitle>
               <IonCardTitle className='subject'> { subject } </IonCardTitle>
@@ -89,31 +89,12 @@ const Tab1: React.FC = () => {
               <br/>
               <IonCardSubtitle className='upnext'>Up next: { upnext }</IonCardSubtitle>
         </div>
+        </IonCardContent>
 
         <div className='ad'>
           <Ad />
         </div>
 
-        <IonList lines='none'>
-          <IonItem>
-            <IonLabel>P1: English</IonLabel>
-          </IonItem>
-          <IonItem>
-            <IonLabel>P2: Mathematics</IonLabel>
-          </IonItem>
-          <IonItem>
-            <IonLabel>P3: Physics</IonLabel>
-          </IonItem>
-          <IonItem>
-            <IonLabel>P4: Life Science</IonLabel>
-          </IonItem>
-          <IonItem>
-            <IonLabel>BREAK</IonLabel>
-          </IonItem>
-          <IonItem>
-            <IonLabel>Pro Feature Required</IonLabel>
-          </IonItem>
-        </IonList>
 
         <IonModal isOpen={showModal} cssClass='my-custom-class'>
           <AuthCard/>
