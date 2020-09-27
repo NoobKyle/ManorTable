@@ -65,7 +65,7 @@ export default function intrests(state = initial_state, action:any){
                         draft.current.upnext = 'After School'
                         break
                     default:
-                        draft.current.subject = '---'
+                        draft.current.subject = 'o.O'
                         draft.current.period = 0
                         draft.current.upnext = 'click refresh button in settings'
                 }
