@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonList, IonLabel, IonModal, IonItem, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCardContent } from '@ionic/react';
+import {  IonModal, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCardContent } from '@ionic/react';
 
 import './Tab1.css';
 import AuthCard from '../components/Auth/AuthCard';
@@ -30,23 +30,27 @@ const Tab1: React.FC = () => {
     let currentTime = today.getHours();
 
     switch( currentTime ){
-      case 22:
+      case 5:
           return 1
-      case 9:
+      case 6:
+          return 1
+      case 7:
+          return 1
+      case 8:
           return 2
-      case 10:
+      case 9:
           return 3
-      case 11:
+      case 10:
           return 4
-      case 12:
+      case 11:
           return 5
-      case 13:
+      case 12:
           return 6
-      case 14:
+      case 13:
           return 7
-      case 15:
+      case 14:
           return 8
-      case 16:
+      case 15:
           return 9
       default:
           return 0

@@ -5,9 +5,10 @@ import './Tab3.css';
 
 import Share from '../components/AboutComps/Share/ShareCard';
 import Premium from '../components/AboutComps/Premium/Premium';
+import HelpCard from '../components/AboutComps/Help/HelpCard';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../store/modules/rootReducer'
+import { RootState } from '../store/modules/rootReducer';
 import { Auth } from '../store/modules/user/action';
 
 const Tab3: React.FC = () => {
@@ -49,7 +50,7 @@ const Tab3: React.FC = () => {
         <br />
 
         <IonList>
-          <IonItem button onClick={() => { window.location.reload(false)}} >
+          <IonItem button onClick={() => { window.location.reload(false)}} href='/'>
             <IonLabel>
               Refresh
             </IonLabel>
@@ -92,7 +93,7 @@ const Tab3: React.FC = () => {
             </IonLabel>
           </IonItem>
           <IonModal isOpen={showHelpCard} cssClass='my-custom-class'>
-            <p>hello </p>
+            <HelpCard/>
             <IonButton expand="block" fill="clear" onClick={() => setShowHelpCard(false)}> Close </IonButton>
           </IonModal>
 
@@ -120,7 +121,7 @@ const Tab3: React.FC = () => {
 
         <IonCard>
           <IonCardHeader>
-              <IonCardSubtitle>Manor Table</IonCardSubtitle>
+              <IonCardSubtitle>Kyle Made This!!</IonCardSubtitle>
               <IonCardSubtitle>Copyright &#169; 2020, All Rights Reserved</IonCardSubtitle>
           </IonCardHeader>
         </IonCard>

@@ -14,7 +14,6 @@ const ComingSoon: React.FC = () => {
         <IonCardContent>
           <p>Hey! Wonder what class your friends have next?</p>
           <p>Add them here.</p>
-          <a href='https://www.indiehackers.com/' className='bloglink'>Site Update Blog</a>
         </IonCardContent>
       </IonCard>
     </div>

@@ -39,7 +39,7 @@ const ComingSoon: React.FC = () => {
           <br/>
           <br/>
           <br/>
-          <a href='https://www.indiehackers.com/' className='bloglink'>Create Account</a>
+          <a href='/' className='bloglink'>Create Account</a>
         </IonCardContent>
       </IonCard>
     </div>

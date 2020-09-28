@@ -8,7 +8,7 @@ const Premium: React.FC = () => {
   return (
     <div>
         <IonCardHeader>
-            <IonCardTitle><strong>Get Featured</strong></IonCardTitle>
+            <IonCardTitle><strong>Go Premium</strong></IonCardTitle>
             <IonCardSubtitle>On our app</IonCardSubtitle>
         </IonCardHeader>
 
@@ -22,7 +22,7 @@ const Premium: React.FC = () => {
         <IonText>
             <h5>How it Works</h5>
 
-            <p>Get more viewrs on your youtube channel by getting featured on our app.</p>
+            <p>Connect your friends calendars and stuff.</p>
         </IonText>
     </div>
   );
