@@ -15,6 +15,7 @@ const Tab1: React.FC = () => {
 
   const [showModal, setShowModal] = useState(false );
 
+  const user = useSelector( (state:RootState) => state.user.list.username);
   const authState = useSelector( (state:RootState) => state.user.list.authed);
 
   const subject = useSelector( (state:RootState) => state.calendar.current.subject);
@@ -85,7 +86,7 @@ const Tab1: React.FC = () => {
 
         <IonCardContent className='mainContent'>
         <div className='main'>
-              <IonCardSubtitle className='greeting'>Hey! Kyle</IonCardSubtitle>
+              <IonCardSubtitle className='greeting'>Hey! {user}</IonCardSubtitle>
               <IonCardTitle className='subject'> { subject } </IonCardTitle>
               <IonCardSubtitle className='period'>Period: { period }</IonCardSubtitle>
               <IonCardSubtitle className='day'>Day: { day }</IonCardSubtitle>
@@ -102,7 +103,6 @@ const Tab1: React.FC = () => {
 
         <IonModal isOpen={showModal} cssClass='my-custom-class'>
           <AuthCard/>
-
         </IonModal>
 
       </IonContent>
