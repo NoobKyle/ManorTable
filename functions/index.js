@@ -87,7 +87,6 @@ app.get('/:id', (req, res)=> {
                   }
               })
               res.send(moc);
-              res.sendStatus(200);
           })
           .catch(err => {
               res.sendStatus(500);

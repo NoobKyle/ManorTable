@@ -50,7 +50,11 @@ const Tab3: React.FC = () => {
         <br />
 
         <IonList>
-          <IonItem button onClick={() => { window.location.reload(false)}} href='/'>
+          <IonItem button onClick={() => {
+              localStorage.removeItem('calendar');
+              console.log('clearing localStorage');
+              window.location.reload(false)}}
+              href='/'>
             <IonLabel>
               Refresh
             </IonLabel>
