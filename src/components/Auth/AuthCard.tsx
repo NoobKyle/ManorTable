@@ -13,6 +13,18 @@ const ComingSoon: React.FC = () => {
    const [username, setUsername] = useState<string>();
    const [day, setDay] = useState<number>();
 
+   async function registerUSer(){
+       console.log('Process: Registering User');
+       let a = dispatch(Auth( username, day, true));
+
+       await a;
+       await setTimeout(() => { refreshPage('/') } , 5000);
+   }
+
+   function refreshPage( route:string ){
+       window.location.href = route;
+   }
+
   return (
     <div className='comingsoon'>
       <IonCard>
@@ -35,7 +47,7 @@ const ComingSoon: React.FC = () => {
           <br/>
           <br/>
 
-          <IonButton onClick={() => { dispatch(Auth( username, day, true)); dispatch(GetCalendar(username, day)) }} >Login</IonButton>
+          <IonButton onClick={() => { registerUSer(); }}>Login</IonButton>
           <br/>
           <br/>
           <br/>

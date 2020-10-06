@@ -4,3 +4,9 @@ export function Auth( name:any, day: any, authed: boolean){
         payload: { username:name, day:day, authed:authed }
     };
 }
+
+export function CheckAuth(){
+    return {
+        type: 'checkAuth'
+    }
+}

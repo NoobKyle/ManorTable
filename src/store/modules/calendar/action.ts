@@ -9,30 +9,35 @@ export function periodUpdate( input:any ){
     };
 }
 
-export function dayUpdate( input:number ){
-  return {
-    type: "DAY_UPDATE",
-    payload: input
-  }
-}
-
 export const GetCalendar = ( username:any, day:any ) => {
     return ( dispatch:Dispatch ) => {
 
-        axios.get(`https://us-central1-manortable.cloudfunctions.net/app/${username}?day=d${day}`)
-        .then(res => {
-            const data = res.data;
+        let offlineCalendar:any =  JSON.parse(localStorage.getItem('calendar') || '["noCalendar"]');
+        var data
+
+        if( offlineCalendar[0] != 'noCalendar' ){
+            console.log('Process: Calendar Exists')
+            dispatch({
+                type: "GET_CALENDAR",
+                data: offlineCalendar,
+                day: day
+            });
+        }else{
+            console.log('Process: Fetching Calendar')
+            axios.get(`https://us-central1-manortable.cloudfunctions.net/app/${username}?day=d${day}`)
+            .then(res => {
+                data = res.data;
 
             dispatch({
                 type: "GET_CALENDAR",
                 data: data,
                 day: day
-            });
+                });
 
-            dispatch({
-              type: "DAY_UPDATE",
-              day: day
+            console.log('Process: Adding Calendar to LocalStorage');
+            localStorage.setItem('calendar', JSON.stringify(data));
+
             })
-        })
+        };
     };
 };
