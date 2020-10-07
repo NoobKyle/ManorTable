@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import {  IonModal, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCardContent } from '@ionic/react';
+import {  IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCardContent } from '@ionic/react';
 
 import './Tab1.css';
-import AuthCard from '../components/Auth/AuthCard';
+import Ad from '../components/Ad/Ad';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/modules/rootReducer'
 
-import Ad from '../components/Ad/Ad';
 import { periodUpdate } from '../store/modules/calendar/action';
+import { GetCalendar } from '../store/modules/calendar/action';
+import { CheckAuth } from '../store/modules/user/action';
 
 
 const Tab1: React.FC = () => {
 
-  const [showModal, setShowModal] = useState(false );
-
-  const user = useSelector( (state:RootState) => state.user.list.username);
   const authState = useSelector( (state:RootState) => state.user.list.authed);
+  const username = useSelector( (state:RootState) => state.user.list.username);
 
   const subject = useSelector( (state:RootState) => state.calendar.current.subject);
   const period = useSelector( (state:RootState) => state.calendar.current.period);
@@ -24,6 +23,10 @@ const Tab1: React.FC = () => {
   const upnext = useSelector( (state:RootState) => state.calendar.current.upnext);
 
   const dispatch = useDispatch();
+
+  async function runCheckUp(){
+      await dispatch(GetCalendar('kyle', 3));
+  }
 
 
   function currentPeriod(){
@@ -60,14 +63,13 @@ const Tab1: React.FC = () => {
 
 
   useEffect(() => {
-    if( authState === false){
-      setShowModal(true);
-    }else{
-      setShowModal(false);
-    }
-
     dispatch( periodUpdate(currentPeriod()));
   });
+
+  useEffect(() => {
+      dispatch(CheckAuth());
+      runCheckUp();
+  },[]);
 
 
   return (
@@ -86,7 +88,7 @@ const Tab1: React.FC = () => {
 
         <IonCardContent className='mainContent'>
         <div className='main'>
-              <IonCardSubtitle className='greeting'>Hey! {user}</IonCardSubtitle>
+              <IonCardSubtitle className='greeting'>Hey! {username}</IonCardSubtitle>
               <IonCardTitle className='subject'> { subject } </IonCardTitle>
               <IonCardSubtitle className='period'>Period: { period }</IonCardSubtitle>
               <IonCardSubtitle className='day'>Day: { day }</IonCardSubtitle>
@@ -99,11 +101,6 @@ const Tab1: React.FC = () => {
         <div className='ad'>
           <Ad />
         </div>
-
-
-        <IonModal isOpen={showModal} cssClass='my-custom-class'>
-          <AuthCard/>
-        </IonModal>
 
       </IonContent>
     </IonPage>
