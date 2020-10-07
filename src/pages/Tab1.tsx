@@ -14,7 +14,6 @@ import { CheckAuth } from '../store/modules/user/action';
 
 const Tab1: React.FC = () => {
 
-
   const authState = useSelector( (state:RootState) => state.user.list.authed);
   const username = useSelector( (state:RootState) => state.user.list.username);
 

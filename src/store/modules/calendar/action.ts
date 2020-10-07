@@ -9,6 +9,7 @@ export function periodUpdate( input:any ){
     };
 }
 
+
 export const GetCalendar = ( username:any, day:any ) => {
     return ( dispatch:Dispatch ) => {
 
@@ -40,4 +41,4 @@ export const GetCalendar = ( username:any, day:any ) => {
             })
         };
     };
-};
+}
