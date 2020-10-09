@@ -20,7 +20,7 @@ export default function intrests(state = initial_state, action:any){
                 localStorage.setItem('username', action.payload.username);
                 localStorage.setItem('day', action.payload.day);
                 break;
-            case 'checkAuth':
+            case 'CheckAuth':
                 console.log('Process: Checking Auth');
                 const authState = localStorage.getItem('authed' || '');
 

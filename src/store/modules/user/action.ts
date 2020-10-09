@@ -7,6 +7,6 @@ export function Auth( name:any, day: any, authed: boolean){
 
 export function CheckAuth(){
     return {
-        type: 'checkAuth'
+        type: 'CheckAuth'
     }
 }
