@@ -21,6 +21,15 @@ const Tab3: React.FC = () => {
 
   const dispatch = useDispatch();
 
+  function signOUt(){
+      localStorage.removeItem('authed');
+      localStorage.removeItem('username');
+      localStorage.removeItem('day');
+      localStorage.removeItem('calendar');
+
+      dispatch( Auth('noUser', 1, false));
+  }
+
   return (
     <IonPage>
       <IonHeader>
@@ -110,7 +119,7 @@ const Tab3: React.FC = () => {
         <br />
 
         <IonList>
-          <IonItem button onClick={() => { dispatch( Auth('noUser', 1, false))  }} href='/'>
+          <IonItem button onClick={() => { signOUt() }} href='/'>
             <IonLabel>
               Sign Out
             </IonLabel>
