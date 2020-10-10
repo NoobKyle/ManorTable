@@ -10,8 +10,10 @@ export function periodUpdate( input:any ){
 }
 
 
-export const GetCalendar = ( username:any, day:any ) => {
+export const GetCalendar = () => {
     return ( dispatch:Dispatch ) => {
+        let username = localStorage.getItem('username');
+        let day = localStorage.getItem('day');
 
         let offlineCalendar:any =  JSON.parse(localStorage.getItem('calendar') || '["noCalendar"]');
         var data

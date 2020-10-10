@@ -25,7 +25,7 @@ const Tab1: React.FC = () => {
   const dispatch = useDispatch();
 
   async function runCheckUp(){
-      await dispatch(GetCalendar('kyle', 3));
+      await setTimeout(() => { dispatch(GetCalendar()) } , 3000);
   }
 
 
