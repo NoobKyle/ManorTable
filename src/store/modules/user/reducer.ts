@@ -24,7 +24,7 @@ export default function intrests(state = initial_state, action:any){
                 console.log('Process: Checking Auth');
                 const authState = localStorage.getItem('authed' || '');
 
-                if( authState == 'true'){
+                if( authState === 'true'){
                     let username = (localStorage.getItem('username') || '');
                     let day = (localStorage.getItem('day') || '');
                     let auth = (localStorage.getItem('authed') || '');
@@ -33,6 +33,7 @@ export default function intrests(state = initial_state, action:any){
                     draft.list.day = parseInt(day);
                     draft.list.authed = JSON.parse(auth);   ;
                 }
+                break
             default:
         }
     })

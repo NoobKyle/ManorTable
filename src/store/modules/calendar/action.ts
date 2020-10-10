@@ -18,7 +18,7 @@ export const GetCalendar = () => {
         let offlineCalendar:any =  JSON.parse(localStorage.getItem('calendar') || '["noCalendar"]');
         var data
 
-        if( offlineCalendar[0] != 'noCalendar' ){
+        if( offlineCalendar[0] !== 'noCalendar' ){
             console.log('Process: Calendar Exists')
             dispatch({
                 type: "GET_CALENDAR",

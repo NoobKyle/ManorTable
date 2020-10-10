@@ -12,7 +12,7 @@ const Login: React.FC = () => {
         const authState = localStorage.getItem('authed');
         console.log('AuthState: '+ authState);
 
-        if( authState == 'true'){
+        if( authState === 'true'){
             setLogin(true);
             console.log('Login: '+ login);
         }

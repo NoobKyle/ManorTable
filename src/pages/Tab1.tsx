@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import {  IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCardContent } from '@ionic/react';
 
 import './Tab1.css';
@@ -14,9 +14,7 @@ import { CheckAuth } from '../store/modules/user/action';
 
 const Tab1: React.FC = () => {
 
-  const authState = useSelector( (state:RootState) => state.user.list.authed);
   const username = useSelector( (state:RootState) => state.user.list.username);
-
   const subject = useSelector( (state:RootState) => state.calendar.current.subject);
   const period = useSelector( (state:RootState) => state.calendar.current.period);
   const day = useSelector( (state:RootState) => state.calendar.current.day);

@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonItem, IonInput, IonButton, IonModal } from '@ionic/react';
 import './AuthCard.css';
 
 import Loading from './LoadingModal/Loading';
 
 import { Auth } from '../../store/modules/user/action';
-import { GetCalendar } from '../../store/modules/calendar/action';
 import { useDispatch } from 'react-redux';
 
 const AuthCard: React.FC = () => {
